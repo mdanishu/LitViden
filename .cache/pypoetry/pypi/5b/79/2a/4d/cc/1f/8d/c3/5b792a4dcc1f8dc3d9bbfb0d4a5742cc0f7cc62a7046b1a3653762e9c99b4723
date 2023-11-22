@@ -1,0 +1,1 @@
+9999999999{"name": "Pympler", "version": "1.0.1", "summary": "A development tool to measure, monitor and analyze the memory behavior of Python objects.", "platform": "any", "requires_dist": null, "requires_python": ">=3.6", "files": [], "_cache_version": "1.0.0"}

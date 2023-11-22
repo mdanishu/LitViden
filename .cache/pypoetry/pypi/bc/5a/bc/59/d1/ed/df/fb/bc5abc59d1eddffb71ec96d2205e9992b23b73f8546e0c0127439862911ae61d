@@ -1,0 +1,1 @@
+9999999999{"name": "GitPython", "version": "3.1.31", "summary": "GitPython is a Python library used to interact with Git repositories", "platform": null, "requires_dist": ["gitdb (<5,>=4.0.1)", "typing-extensions (>=3.7.4.3) ; python_version < \"3.8\""], "requires_python": ">=3.7", "files": [], "_cache_version": "1.0.0"}
