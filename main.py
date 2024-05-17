@@ -49,10 +49,20 @@ if not ticker_df.empty:
     ticker_df = ticker_df.sort_values(by='Date')
 
     # Create and display plot
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.plot(ticker_df['Date'], ticker_df['Price'], label='Price')
-    # ... Add other plot elements as in your original Streamlit app
-    ax.legend()
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8), sharex=True, gridspec_kw={'height_ratios': [3, 1]})
+
+    # Main plot with price and moving averages
+    ax1.plot(ticker_df['Date'], ticker_df['Price'], label='Price', color='blue')
+    ax1.plot(ticker_df['Date'], ticker_df['50d MA'], label='50d MA', color='green')
+    ax1.plot(ticker_df['Date'], ticker_df['200d MA'], label='200d MA', color='red')
+    ax1.set_ylabel('Price')
+    ax1.legend()
+    ax1.grid(True)
+
+    # Volume bar plot
+    ax2.bar(ticker_df['Date'], ticker_df['Volume'], color='grey', width=1)
+    ax2.set_ylabel('Volume')
+    ax2.grid(True)
 
     # Convert plot to image and display
     image = plot_to_image(fig)
